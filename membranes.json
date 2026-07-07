@@ -1,0 +1,70 @@
+{
+  "title": "The Membrane Map",
+  "subtitle": "the membranes your work can cross, and the instrument that watches each",
+  "note": "A marker you plant can cross out of your hands by more than one route. Each route is a membrane; each membrane has (or needs) its own detector. A positive is a lead; a negative means almost nothing — the silence-gauge says how little.",
+  "membranes": [
+    {
+      "key": "published",
+      "name": "the PUBLISHED membrane",
+      "crosses": "your marker on a crawlable page, found where an index already crawled it",
+      "detector": "forward-observers",
+      "status": "built",
+      "color": "#6f7d3f",
+      "url": "https://davidwise01.github.io/forward-observers/",
+      "repo": "https://github.com/DavidWise01/forward-observers",
+      "positive": "a hit is ground truth: the token is indexed at that URL",
+      "negative": "absence in the ledger is not absence in the world"
+    },
+    {
+      "key": "weights",
+      "name": "the WEIGHTS membrane",
+      "crosses": "your marker ingested into a model's training set and re-emitted from the weights",
+      "detector": "surfacing",
+      "status": "built",
+      "color": "#1f6f7a",
+      "url": "https://davidwise01.github.io/surfacing/",
+      "repo": "https://github.com/DavidWise01/surfacing",
+      "positive": "a certified surface is membership evidence — temporal/structural, not theft",
+      "negative": "models suppress verbatim recall; silence proves nothing"
+    },
+    {
+      "key": "context",
+      "name": "the CONTEXT / RELAY membrane",
+      "crosses": "your marker re-emitted in another agent's output and relayed back to you secondhand",
+      "detector": "hearsay",
+      "status": "built",
+      "color": "#6d4d7a",
+      "url": "https://davidwise01.github.io/hearsay/",
+      "repo": "https://github.com/DavidWise01/hearsay",
+      "positive": "a private marker in a third party's relay is a corroborated lead",
+      "negative": "most relays you never see; hearsay is hearsay"
+    },
+    {
+      "key": "inference",
+      "name": "the INFERENCE / API membrane",
+      "crosses": "your marker echoed back through a hosted model's completions to third parties (shared cache, logs, retrieval)",
+      "detector": null,
+      "status": "unbuilt",
+      "color": "#9a8f6d",
+      "positive": null,
+      "negative": null
+    },
+    {
+      "key": "airgap",
+      "name": "the AIR-GAP membrane",
+      "crosses": "your marker carried across a gap that was supposed to hold — distance, sovereignty, design, or impermanence",
+      "detector": "airgap-ladder (adjacent thread)",
+      "status": "partial",
+      "color": "#8a7a86",
+      "positive": null,
+      "negative": null
+    }
+  ],
+  "gauge": {
+    "name": "the silence-gauge",
+    "role": "weighs the NEGATIVE any detector returns — a positive can be ~60 bits; under suppression a silence is < 0.1 bit",
+    "color": "#3f6d86",
+    "url": "https://davidwise01.github.io/silence-gauge/",
+    "repo": "https://github.com/DavidWise01/silence-gauge"
+  }
+}

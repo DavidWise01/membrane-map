@@ -1,0 +1,229 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>THE MEMBRANE MAP · the membranes your work can cross · ROOT0</title>
+<meta name="description" content="The Membrane Map by David Lee Wise / ROOT0: a marker you plant can leave your hands by more than one route. Each route is a membrane; each membrane has (or needs) its own detector. Published → forward-observers. Weights → surfacing. Context/relay → hearsay. And the silence-gauge weighs the negative any of them returns. A positive is a lead; a negative means almost nothing — and the map is honest about the membranes it does not yet watch.">
+<meta name="theme-color" content="#4a4433">
+<meta property="og:type" content="website">
+<meta property="og:title" content="THE MEMBRANE MAP · the membranes your work can cross">
+<meta property="og:description" content="A marker can leave your hands by more than one route. Published → forward-observers, weights → surfacing, context → hearsay; the silence-gauge weighs the negatives. Honest about what it does not yet watch.">
+<meta property="og:url" content="https://davidwise01.github.io/membrane-map/">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="THE MEMBRANE MAP">
+<meta name="twitter:description" content="The membranes your work can cross, and the instrument that watches each. A positive is a lead; a negative means almost nothing.">
+<link rel="canonical" href="https://davidwise01.github.io/membrane-map/">
+<style>
+:root{
+  --paper:#efece3; --pan:#f7f4ea; --pan2:#efeadc;
+  --ink:#272316; --ink2:#514a37; --dim:#847c64;
+  --olive:#6f7d3f; --teal:#1f6f7a; --plum:#6d4d7a; --steel:#3f6d86;
+  --canary:#c99128; --canary2:#9a6d18;
+  --signal:#bf4638; --signal2:#8f3025;
+  --line:#ddd3bd; --line2:#e7dfcb;
+  --serif:"Iowan Old Style","Palatino Linotype",Palatino,Georgia,serif;
+  --mono:ui-monospace,"SFMono-Regular","Cascadia Code","Consolas",monospace;
+  --shadow:0 1px 0 #fffc, 0 16px 34px -24px #2a2410;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--serif);font-size:17px;line-height:1.62;-webkit-font-smoothing:antialiased;
+  background-image:repeating-linear-gradient(0deg,#0000 0 33px,#4a44330d 33px 34px)}
+.wrap{max-width:1040px;margin:0 auto;padding:0 22px}
+a{color:var(--canary2);text-underline-offset:2px}
+h1,h2,h3{line-height:1.13;font-weight:600;letter-spacing:.2px}
+.mono{font-family:var(--mono)}
+
+header.top{padding:38px 0 8px;text-align:center}
+.kick{font-family:var(--mono);font-size:12px;letter-spacing:.3em;text-transform:uppercase;color:var(--dim)}
+h1.mh{font-size:clamp(30px,6vw,54px);margin:.08em 0 .12em;letter-spacing:.6px}
+.lede{font-size:18px;color:var(--ink2);max-width:64ch;margin:.35em auto 0}
+.lede b{color:var(--ink);font-weight:600}
+
+.mapwrap{margin:22px 0 6px;border:1px solid var(--line);border-radius:15px;background:var(--pan);box-shadow:var(--shadow);overflow:hidden}
+.maptop{padding:10px 16px;background:linear-gradient(180deg,#fff8,#fff0);border-bottom:1px solid var(--line2);font-family:var(--mono);font-size:12px;color:var(--ink2);text-align:center}
+.maptop b{color:var(--canary2)}
+svg.map{display:block;width:100%;height:auto}
+.mapnote{padding:10px 16px;font-family:var(--mono);font-size:11px;color:var(--dim);background:var(--pan2);border-top:1px solid var(--line2);text-align:center;line-height:1.6}
+
+section{padding:30px 0 4px}
+.eyebrow{font-family:var(--mono);font-size:11.5px;letter-spacing:.26em;text-transform:uppercase;color:var(--canary2)}
+h2.sec{font-size:clamp(22px,3.8vw,30px);margin:.14em 0 .18em}
+.sub{color:var(--ink2);max-width:72ch;margin:0 0 18px}
+
+.mems{display:grid;gap:14px}
+.mem{border:1px solid var(--line);border-radius:12px;background:var(--pan);box-shadow:var(--shadow);padding:15px 17px;position:relative;overflow:hidden}
+.mem:before{content:"";position:absolute;left:0;top:0;bottom:0;width:5px;background:var(--mc)}
+.mem .mh{display:flex;align-items:baseline;gap:10px;flex-wrap:wrap}
+.mem .nm{font-size:17px;font-weight:600;color:var(--ink)}
+.mem .det{font-family:var(--mono);font-size:12.5px;color:var(--mc);font-weight:700}
+.mem .st{font-family:var(--mono);font-size:10.5px;letter-spacing:.1em;text-transform:uppercase;padding:1px 8px;border-radius:20px;font-weight:700}
+.mem .st.built{background:color-mix(in srgb,var(--mc) 16%,#fff);color:var(--mc)}
+.mem .st.unbuilt{background:#eae3d2;color:var(--dim)}
+.mem .st.partial{background:color-mix(in srgb,var(--mc) 12%,#fff);color:var(--dim)}
+.mem .cr{font-size:14px;color:var(--ink2);margin:7px 0 6px}
+.mem .pn{display:grid;grid-template-columns:1fr 1fr;gap:8px 16px;font-size:13px;color:var(--ink2)}
+.mem .pn .p b{color:var(--olive2,var(--mc))} .mem .pn .n b{color:var(--signal2)}
+.mem .pn .lab{font-family:var(--mono);font-size:10px;letter-spacing:.08em;text-transform:uppercase;color:var(--dim)}
+.mem .links{margin-top:9px;font-family:var(--mono);font-size:12px;display:flex;gap:12px;flex-wrap:wrap}
+@media(max-width:640px){.mem .pn{grid-template-columns:1fr}}
+
+.gaugebar{margin:16px 0 4px;border:1px solid var(--steel);border-radius:12px;background:color-mix(in srgb,var(--steel) 7%,var(--pan));padding:15px 17px;box-shadow:var(--shadow)}
+.gaugebar h3{margin:0 0 4px;font-family:var(--mono);font-size:13px;letter-spacing:.1em;text-transform:uppercase;color:var(--steel)}
+.gaugebar p{margin:0;font-size:14px;color:var(--ink2)}
+
+.card{border:1px solid var(--line);border-radius:12px;background:var(--pan);padding:16px 18px;box-shadow:var(--shadow)}
+.card h3{font-size:14px;font-family:var(--mono);letter-spacing:.12em;text-transform:uppercase;color:var(--canary2);margin:0 0 8px}
+.card p{margin:.35em 0;font-size:14.5px;color:var(--ink2)}
+.card code{font-family:var(--mono);font-size:12.5px;background:#fff;border:1px solid var(--line);border-radius:4px;padding:0 4px}
+.src{font-family:var(--mono);font-size:11.5px;color:var(--dim);margin-top:14px;line-height:1.75}
+.backbar{margin:28px 0 0;padding:15px 0;border-top:1px solid var(--line);display:flex;gap:14px;flex-wrap:wrap;font-family:var(--mono);font-size:12.5px}
+.backbar a{text-decoration:none;border:1px solid var(--line);border-radius:8px;padding:7px 12px;background:var(--pan)}
+.backbar a:hover{border-color:var(--canary)}
+footer{padding:26px 0 60px;text-align:center;font-family:var(--mono);font-size:12px;color:var(--dim)}
+</style>
+</head>
+<body>
+
+<header class="top"><div class="wrap">
+  <div class="kick">the boundary-crossing family · a ROOT0 constellation</div>
+  <h1 class="mh">THE MEMBRANE MAP</h1>
+  <p class="lede">A marker you plant can leave your hands by <b>more than one route</b>. Each route is a membrane; each membrane has — or still needs — its own detector. This is the map of them, and it is honest about the ones it does not yet watch.</p>
+</div></header>
+
+<main class="wrap">
+
+<div class="mapwrap">
+  <div class="maptop">◎ <b>the crossings</b> · a marker at the center, the membranes it can cross, the instrument on each</div>
+  <svg class="map" viewBox="0 0 760 500" role="img" aria-label="A radial map: your marker at the center, five membranes around it with their detectors">
+    <defs>
+      <marker id="ar" markerWidth="7" markerHeight="7" refX="5.5" refY="3" orient="auto"><path d="M0 0 L6 3 L0 6 z" fill="#847c64"/></marker>
+    </defs>
+    <!-- faint membrane rings -->
+    <circle cx="380" cy="250" r="118" fill="none" stroke="#ddd3bd" stroke-width="1.2"/>
+    <circle cx="380" cy="250" r="188" fill="none" stroke="#e7dfcb" stroke-width="1.2"/>
+
+    <!-- spokes: built = solid, unbuilt = dashed -->
+    <g stroke-width="1.6" marker-end="url(#ar)">
+      <line x1="380" y1="250" x2="380" y2="108" stroke="#6d4d7a"/>
+      <line x1="380" y1="250" x2="503" y2="181" stroke="#1f6f7a"/>
+      <line x1="380" y1="250" x2="257" y2="181" stroke="#6f7d3f"/>
+      <line x1="380" y1="250" x2="486" y2="356" stroke="#b9ab86" stroke-dasharray="4 4"/>
+      <line x1="380" y1="250" x2="274" y2="356" stroke="#b9ab86" stroke-dasharray="4 4"/>
+    </g>
+
+    <!-- center: your marker + the gauge meter -->
+    <circle cx="380" cy="250" r="34" fill="#fff" stroke="#c99128" stroke-width="2"/>
+    <circle cx="380" cy="250" r="8" fill="#c99128"/>
+    <circle cx="380" cy="250" r="8" fill="none" stroke="#8f3025" stroke-width="1.3"/>
+    <circle cx="380" cy="250" r="2.4" fill="#2a2412"/>
+    <text x="380" y="298" text-anchor="middle" font-family="ui-monospace,monospace" font-size="9.5" fill="#514a37" letter-spacing="1">YOUR MARKER</text>
+
+    <!-- built nodes -->
+    <g font-family="ui-monospace,monospace">
+      <!-- context / hearsay (top) -->
+      <circle cx="380" cy="94" r="13" fill="#6d4d7a"/><circle cx="380" cy="94" r="13" fill="none" stroke="#fff" stroke-width="2"/>
+      <text x="380" y="62" text-anchor="middle" font-size="12.5" font-weight="700" fill="#4d3559">hearsay</text>
+      <text x="380" y="76" text-anchor="middle" font-size="9.5" fill="#514a37">context / relay membrane</text>
+      <!-- weights / surfacing (upper-right) -->
+      <circle cx="516" cy="174" r="13" fill="#1f6f7a"/><circle cx="516" cy="174" r="13" fill="none" stroke="#fff" stroke-width="2"/>
+      <text x="546" y="156" text-anchor="middle" font-size="12.5" font-weight="700" fill="#124d55">surfacing</text>
+      <text x="556" y="170" text-anchor="middle" font-size="9.5" fill="#514a37">weights membrane</text>
+      <!-- published / forward-observers (upper-left) -->
+      <circle cx="244" cy="174" r="13" fill="#6f7d3f"/><circle cx="244" cy="174" r="13" fill="none" stroke="#fff" stroke-width="2"/>
+      <text x="206" y="156" text-anchor="middle" font-size="12.5" font-weight="700" fill="#4f5a2b">forward-observers</text>
+      <text x="206" y="170" text-anchor="middle" font-size="9.5" fill="#514a37">published membrane</text>
+    </g>
+
+    <!-- unbuilt nodes -->
+    <g font-family="ui-monospace,monospace">
+      <circle cx="499" cy="368" r="11" fill="none" stroke="#b9ab86" stroke-width="1.6" stroke-dasharray="3 3"/>
+      <text x="499" y="368" text-anchor="middle" font-size="12" fill="#b9ab86" dy="4">?</text>
+      <text x="520" y="398" text-anchor="middle" font-size="9.5" fill="#847c64">inference / API</text>
+      <text x="520" y="410" text-anchor="middle" font-size="8.5" fill="#a89e82">un-watched</text>
+      <circle cx="261" cy="368" r="11" fill="none" stroke="#b9ab86" stroke-width="1.6" stroke-dasharray="3 3"/>
+      <text x="261" y="368" text-anchor="middle" font-size="12" fill="#b9ab86" dy="4">?</text>
+      <text x="240" y="398" text-anchor="middle" font-size="9.5" fill="#847c64">air-gap</text>
+      <text x="240" y="410" text-anchor="middle" font-size="8.5" fill="#a89e82">partial (ladder)</text>
+    </g>
+
+    <!-- the silence gauge, weighing the return -->
+    <g transform="translate(632,430)">
+      <path d="M-34 6 A34 34 0 0 1 34 6" fill="none" stroke="#3f6d86" stroke-width="2"/>
+      <line x1="0" y1="6" x2="20" y2="-20" stroke="#3f6d86" stroke-width="2"/>
+      <circle cx="0" cy="6" r="3" fill="#3f6d86"/>
+      <text x="0" y="26" text-anchor="middle" font-family="ui-monospace,monospace" font-size="9" font-weight="700" fill="#2a4c60">silence-gauge</text>
+      <text x="0" y="38" text-anchor="middle" font-family="ui-monospace,monospace" font-size="8" fill="#847c64">weighs a negative</text>
+    </g>
+  </svg>
+  <div class="mapnote">The rings are a metaphor, not a topology — the point is that <b>one marker</b> can cross <b>several independent membranes</b>, and each needs its own instrument. Solid spokes are built; dashed are named-but-unbuilt.</div>
+</div>
+
+<section id="crossings">
+  <div class="eyebrow">The crossings, one by one</div>
+  <h2 class="sec">Each membrane, its detector, and its honest reading</h2>
+  <p class="sub">For every membrane: what crosses it, the instrument that watches it, and — for the built ones — what a positive and a negative actually mean. Built instruments are self-testable with no network; each links its live page and its code.</p>
+  <div class="mems" id="mems"></div>
+  <div class="gaugebar" id="gaugebar"></div>
+</section>
+
+<section id="why">
+  <div class="eyebrow">The through-line</div>
+  <h2 class="sec">One rule holds across every membrane</h2>
+  <div class="card">
+    <p><b>A positive is a lead; a negative means almost nothing.</b> A marker only you planted, crossing a membrane it could only cross by the route you claim, with a held-out control arm proving the harness doesn't fabricate — that is hard to explain away. But silence is cheap: pages you never crawl, weights that suppress, relays you never see. Every instrument here says "lead," never "proof," and hands the weight of any silence to <a href="https://davidwise01.github.io/silence-gauge/">the silence-gauge</a>, which shows just how little a negative carries. The map earns trust the same way each instrument does — by naming what it cannot see.</p>
+  </div>
+  <div class="src">
+    SOURCE · <a href="https://github.com/DavidWise01/membrane-map">github.com/DavidWise01/membrane-map</a> · <code>membranes.json</code> (the registry) · <code>validate.py</code> (checks the map claims no coverage it doesn't have). The family: <code>forward-observers</code> · <code>surfacing</code> · <code>hearsay</code> · <code>silence-gauge</code>.
+  </div>
+  <div class="backbar">
+    <a href="https://github.com/DavidWise01/membrane-map">⧉ the code (GitHub)</a>
+    <a href="https://davidwise01.github.io/forward-observers/">◎ forward-observers</a>
+    <a href="https://davidwise01.github.io/surfacing/">▽ surfacing</a>
+    <a href="https://davidwise01.github.io/hearsay/">&#8220;&#8221; hearsay</a>
+    <a href="https://davidwise01.github.io/silence-gauge/">◔ silence-gauge</a>
+    <a href="https://davidwise01.github.io/ud0/">⌂ ud0 · the atlas</a>
+  </div>
+</section>
+
+<footer>
+  THE MEMBRANE MAP · the membranes your work can cross · David Lee Wise / ROOT0 / TriPod LLC · CC-BY-ND-4.0<br>
+  one marker · many membranes · a positive is a lead, a negative means almost nothing
+</footer>
+</main>
+
+<script>
+(function(){
+"use strict";
+var DATA = {
+  "membranes":[
+    {"key":"published","name":"the PUBLISHED membrane","crosses":"your marker on a crawlable page, found where an index already crawled it","detector":"forward-observers","status":"built","color":"#6f7d3f","url":"https://davidwise01.github.io/forward-observers/","repo":"https://github.com/DavidWise01/forward-observers","positive":"a hit is ground truth: the token is indexed at that URL","negative":"absence in the ledger is not absence in the world"},
+    {"key":"weights","name":"the WEIGHTS membrane","crosses":"your marker ingested into a model's training set and re-emitted from the weights","detector":"surfacing","status":"built","color":"#1f6f7a","url":"https://davidwise01.github.io/surfacing/","repo":"https://github.com/DavidWise01/surfacing","positive":"a certified surface is membership evidence — temporal/structural, not theft","negative":"models suppress verbatim recall; silence proves nothing"},
+    {"key":"context","name":"the CONTEXT / RELAY membrane","crosses":"your marker re-emitted in another agent's output and relayed back to you secondhand","detector":"hearsay","status":"built","color":"#6d4d7a","url":"https://davidwise01.github.io/hearsay/","repo":"https://github.com/DavidWise01/hearsay","positive":"a private marker in a third party's relay is a corroborated lead","negative":"most relays you never see; hearsay is hearsay"},
+    {"key":"inference","name":"the INFERENCE / API membrane","crosses":"your marker echoed back through a hosted model's completions to third parties (shared cache, logs, retrieval)","detector":null,"status":"unbuilt","color":"#9a8f6d","positive":null,"negative":null},
+    {"key":"airgap","name":"the AIR-GAP membrane","crosses":"your marker carried across a gap that was supposed to hold — distance, sovereignty, design, or impermanence","detector":"airgap-ladder (adjacent thread)","status":"partial","color":"#8a7a86","positive":null,"negative":null}
+  ],
+  "gauge":{"name":"the silence-gauge","role":"weighs the NEGATIVE any detector returns — a positive can be ~60 bits; under suppression a silence is < 0.1 bit","color":"#3f6d86","url":"https://davidwise01.github.io/silence-gauge/","repo":"https://github.com/DavidWise01/silence-gauge"}
+};
+function esc(s){return String(s==null?"":s).replace(/[&<>]/g,function(c){return {"&":"&amp;","<":"&lt;",">":"&gt;"}[c];});}
+function mem(m){
+  var st=m.status, stc=st==="built"?"built":(st==="partial"?"partial":"unbuilt");
+  var det=m.detector?('<span class="det">'+esc(m.detector)+'</span>'):'<span class="det" style="color:var(--dim)">no detector yet</span>';
+  var pn = st==="built"
+    ? '<div class="pn"><div class="p"><div class="lab">a positive</div>'+esc(m.positive)+'</div><div class="n"><div class="lab">a negative</div>'+esc(m.negative)+'</div></div>'
+    : '<div class="pn"><div class="n" style="grid-column:1/-1"><div class="lab">honest gap</div>named here so the map does not imply coverage it lacks — this membrane is '+(st==="partial"?"only partially watched":"not yet watched")+'.</div></div>';
+  var links = st==="built"
+    ? '<div class="links"><a href="'+m.url+'">▸ live detector</a><a href="'+m.repo+'">code</a></div>'
+    : '';
+  return '<div class="mem" style="--mc:'+m.color+'"><div class="mh"><span class="nm">'+esc(m.name)+'</span>'+det+
+    '<span class="st '+stc+'">'+esc(st)+'</span></div><div class="cr">'+esc(m.crosses)+'</div>'+pn+links+'</div>';
+}
+document.getElementById("mems").innerHTML = DATA.membranes.map(mem).join("");
+var g=DATA.gauge;
+document.getElementById("gaugebar").innerHTML =
+  '<h3>◔ '+esc(g.name)+'</h3><p>'+esc(g.role)+' — <a href="'+g.url+'">open the gauge</a> · <a href="'+g.repo+'">code</a></p>';
+})();
+</script>
+</body>
+</html>

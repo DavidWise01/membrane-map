@@ -43,21 +43,25 @@
       "key": "inference",
       "name": "the INFERENCE / API membrane",
       "crosses": "your marker echoed back through a hosted model's completions to third parties (shared cache, logs, retrieval)",
-      "detector": null,
-      "status": "developing",
-      "color": "#9a8f6d",
-      "positive": null,
-      "negative": null
+      "detector": "crosstalk",
+      "status": "built",
+      "color": "#a85d3c",
+      "url": "https://davidwise01.github.io/crosstalk/",
+      "repo": "https://github.com/DavidWise01/crosstalk",
+      "positive": "a fresh (post-cutoff) marker in a third-party completion is live-inference leakage, not training",
+      "negative": "you see almost none of a model's completions to other people"
     },
     {
       "key": "airgap",
       "name": "the AIR-GAP membrane",
       "crosses": "your marker carried across a gap that was supposed to hold — distance, sovereignty, design, or impermanence",
-      "detector": null,
-      "status": "developing",
-      "color": "#8a7a86",
-      "positive": null,
-      "negative": null
+      "detector": "faraday",
+      "status": "built",
+      "color": "#55606f",
+      "url": "https://davidwise01.github.io/faraday/",
+      "repo": "https://github.com/DavidWise01/faraday",
+      "positive": "an air-gapped enclave's marker found outside is a breach — it names which of the four gaps failed",
+      "negative": "you cannot watch every place outside; silence is cheap"
     }
   ],
   "gauge": {

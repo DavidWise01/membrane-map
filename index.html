@@ -118,8 +118,8 @@ footer{padding:26px 0 60px;text-align:center;font-family:var(--mono);font-size:1
       <line x1="380" y1="250" x2="380" y2="108" stroke="#6d4d7a"/>
       <line x1="380" y1="250" x2="503" y2="181" stroke="#1f6f7a"/>
       <line x1="380" y1="250" x2="257" y2="181" stroke="#6f7d3f"/>
-      <line x1="380" y1="250" x2="486" y2="356" stroke="#b9ab86" stroke-dasharray="4 4"/>
-      <line x1="380" y1="250" x2="274" y2="356" stroke="#b9ab86" stroke-dasharray="4 4"/>
+      <line x1="380" y1="250" x2="486" y2="356" stroke="#a85d3c"/>
+      <line x1="380" y1="250" x2="274" y2="356" stroke="#55606f"/>
     </g>
 
     <!-- center: your marker + the gauge meter -->
@@ -145,22 +145,24 @@ footer{padding:26px 0 60px;text-align:center;font-family:var(--mono);font-size:1
       <text x="206" y="170" text-anchor="middle" font-size="9.5" fill="#514a37">published membrane</text>
     </g>
 
-    <!-- developing nodes: empty polaroids pinned to the map -->
+    <!-- developed nodes: the polaroids came out -->
     <g font-family="ui-monospace,monospace">
       <g transform="translate(499,366) rotate(4)">
-        <rect x="-13" y="-14" width="26" height="31" rx="1.5" fill="#fff" stroke="#c9bd9c" stroke-width="1.2"/>
-        <rect x="-10" y="-11" width="20" height="16" fill="#e3dcc9"/>
-        <text x="0" y="13" text-anchor="middle" font-size="4.5" fill="#a89e82">undeveloped</text>
+        <rect x="-14" y="-14" width="28" height="31" rx="1.5" fill="#fff" stroke="#c9bd9c" stroke-width="1.2"/>
+        <rect x="-11" y="-11" width="22" height="16" fill="#a85d3c"/>
+        <text x="0" y="-1.5" text-anchor="middle" font-size="4.3" font-weight="700" fill="#fff">crosstalk</text>
+        <text x="0" y="13" text-anchor="middle" font-size="4.2" fill="#7c4327">developed ✓</text>
       </g>
-      <text x="520" y="398" text-anchor="middle" font-size="9.5" fill="#847c64">inference / API</text>
-      <text x="520" y="410" text-anchor="middle" font-size="8.5" fill="#a89e82">developing…</text>
+      <text x="520" y="398" text-anchor="middle" font-size="9.5" fill="#7c4327">inference / API</text>
+      <text x="520" y="410" text-anchor="middle" font-size="8.5" fill="#a85d3c">crosstalk</text>
       <g transform="translate(261,366) rotate(-4)">
-        <rect x="-13" y="-14" width="26" height="31" rx="1.5" fill="#fff" stroke="#c9bd9c" stroke-width="1.2"/>
-        <rect x="-10" y="-11" width="20" height="16" fill="#e3dcc9"/>
-        <text x="0" y="13" text-anchor="middle" font-size="4.5" fill="#a89e82">undeveloped</text>
+        <rect x="-14" y="-14" width="28" height="31" rx="1.5" fill="#fff" stroke="#c9bd9c" stroke-width="1.2"/>
+        <rect x="-11" y="-11" width="22" height="16" fill="#55606f"/>
+        <text x="0" y="-1.5" text-anchor="middle" font-size="4.6" font-weight="700" fill="#fff">faraday</text>
+        <text x="0" y="13" text-anchor="middle" font-size="4.2" fill="#39424e">developed ✓</text>
       </g>
-      <text x="240" y="398" text-anchor="middle" font-size="9.5" fill="#847c64">air-gap</text>
-      <text x="240" y="410" text-anchor="middle" font-size="8.5" fill="#a89e82">developing…</text>
+      <text x="240" y="398" text-anchor="middle" font-size="9.5" fill="#39424e">air-gap</text>
+      <text x="240" y="410" text-anchor="middle" font-size="8.5" fill="#55606f">faraday</text>
     </g>
 
     <!-- the silence gauge, weighing the return -->
@@ -172,7 +174,7 @@ footer{padding:26px 0 60px;text-align:center;font-family:var(--mono);font-size:1
       <text x="0" y="38" text-anchor="middle" font-family="ui-monospace,monospace" font-size="8" fill="#847c64">weighs a negative</text>
     </g>
   </svg>
-  <div class="mapnote">The rings are a metaphor, not a topology — the point is that <b>one marker</b> can cross <b>several independent membranes</b>, and each needs its own instrument. Solid spokes are built; dashed spokes carry an <b>empty polaroid</b> — a detector being built, waiting to develop.</div>
+  <div class="mapnote">The rings are a metaphor, not a topology — the point is that <b>one marker</b> can cross <b>several independent membranes</b>, and each needs its own instrument. All five named here are now watched — the two empty polaroids <b>developed</b> into <b>crosstalk</b> and <b>faraday</b>. The taxonomy isn't closed: more membranes surely exist, and the map will name them before it claims them.</div>
 </div>
 
 <section id="crossings">
@@ -216,8 +218,8 @@ var DATA = {
     {"key":"published","name":"the PUBLISHED membrane","crosses":"your marker on a crawlable page, found where an index already crawled it","detector":"forward-observers","status":"built","color":"#6f7d3f","url":"https://davidwise01.github.io/forward-observers/","repo":"https://github.com/DavidWise01/forward-observers","positive":"a hit is ground truth: the token is indexed at that URL","negative":"absence in the ledger is not absence in the world"},
     {"key":"weights","name":"the WEIGHTS membrane","crosses":"your marker ingested into a model's training set and re-emitted from the weights","detector":"surfacing","status":"built","color":"#1f6f7a","url":"https://davidwise01.github.io/surfacing/","repo":"https://github.com/DavidWise01/surfacing","positive":"a certified surface is membership evidence — temporal/structural, not theft","negative":"models suppress verbatim recall; silence proves nothing"},
     {"key":"context","name":"the CONTEXT / RELAY membrane","crosses":"your marker re-emitted in another agent's output and relayed back to you secondhand","detector":"hearsay","status":"built","color":"#6d4d7a","url":"https://davidwise01.github.io/hearsay/","repo":"https://github.com/DavidWise01/hearsay","positive":"a private marker in a third party's relay is a corroborated lead","negative":"most relays you never see; hearsay is hearsay"},
-    {"key":"inference","name":"the INFERENCE / API membrane","crosses":"your marker echoed back through a hosted model's completions to third parties (shared cache, logs, retrieval)","detector":null,"status":"developing","color":"#9a8f6d","positive":null,"negative":null},
-    {"key":"airgap","name":"the AIR-GAP membrane","crosses":"your marker carried across a gap that was supposed to hold — distance, sovereignty, design, or impermanence","detector":null,"status":"developing","color":"#8a7a86","positive":null,"negative":null}
+    {"key":"inference","name":"the INFERENCE / API membrane","crosses":"your marker echoed back through a hosted model's completions to third parties (shared cache, logs, retrieval)","detector":"crosstalk","status":"built","color":"#a85d3c","url":"https://davidwise01.github.io/crosstalk/","repo":"https://github.com/DavidWise01/crosstalk","positive":"a fresh (post-cutoff) marker in a third-party completion is live-inference leakage, not training","negative":"you see almost none of a model's completions to other people"},
+    {"key":"airgap","name":"the AIR-GAP membrane","crosses":"your marker carried across a gap that was supposed to hold — distance, sovereignty, design, or impermanence","detector":"faraday","status":"built","color":"#55606f","url":"https://davidwise01.github.io/faraday/","repo":"https://github.com/DavidWise01/faraday","positive":"an air-gapped enclave's marker found outside is a breach — it names which of the four gaps failed","negative":"you cannot watch every place outside; silence is cheap"}
   ],
   "gauge":{"name":"the silence-gauge","role":"weighs the NEGATIVE any detector returns — a positive can be ~60 bits; under suppression a silence is < 0.1 bit","color":"#3f6d86","url":"https://davidwise01.github.io/silence-gauge/","repo":"https://github.com/DavidWise01/silence-gauge"}
 };

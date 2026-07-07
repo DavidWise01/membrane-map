@@ -120,6 +120,8 @@ footer{padding:26px 0 60px;text-align:center;font-family:var(--mono);font-size:1
       <line x1="380" y1="250" x2="257" y2="181" stroke="#6f7d3f"/>
       <line x1="380" y1="250" x2="486" y2="356" stroke="#a85d3c"/>
       <line x1="380" y1="250" x2="274" y2="356" stroke="#55606f"/>
+      <line x1="380" y1="250" x2="523" y2="253" stroke="#a8437a"/>
+      <line x1="380" y1="250" x2="237" y2="253" stroke="#4f4a9c"/>
     </g>
 
     <!-- center: your marker + the gauge meter -->
@@ -165,6 +167,16 @@ footer{padding:26px 0 60px;text-align:center;font-family:var(--mono);font-size:1
       <text x="240" y="410" text-anchor="middle" font-size="8.5" fill="#55606f">faraday</text>
     </g>
 
+    <!-- the newest two -->
+    <g font-family="ui-monospace,monospace">
+      <circle cx="536" cy="253" r="13" fill="#a8437a"/><circle cx="536" cy="253" r="13" fill="none" stroke="#fff" stroke-width="2"/>
+      <text x="536" y="279" text-anchor="middle" font-size="9.5" fill="#7e2e58">side-channel</text>
+      <text x="536" y="291" text-anchor="middle" font-size="8.5" fill="#a8437a">telltale</text>
+      <circle cx="224" cy="253" r="13" fill="#4f4a9c"/><circle cx="224" cy="253" r="13" fill="none" stroke="#fff" stroke-width="2"/>
+      <text x="224" y="279" text-anchor="middle" font-size="9.5" fill="#363073">human-memory</text>
+      <text x="224" y="291" text-anchor="middle" font-size="8.5" fill="#4f4a9c">recital</text>
+    </g>
+
     <!-- the silence gauge, weighing the return -->
     <g transform="translate(632,430)">
       <path d="M-34 6 A34 34 0 0 1 34 6" fill="none" stroke="#3f6d86" stroke-width="2"/>
@@ -174,7 +186,7 @@ footer{padding:26px 0 60px;text-align:center;font-family:var(--mono);font-size:1
       <text x="0" y="38" text-anchor="middle" font-family="ui-monospace,monospace" font-size="8" fill="#847c64">weighs a negative</text>
     </g>
   </svg>
-  <div class="mapnote">The rings are a metaphor, not a topology — the point is that <b>one marker</b> can cross <b>several independent membranes</b>, and each needs its own instrument. All five named here are now watched — the two empty polaroids <b>developed</b> into <b>crosstalk</b> and <b>faraday</b>. The taxonomy isn't closed: more membranes surely exist, and the map will name them before it claims them.</div>
+  <div class="mapnote">The rings are a metaphor, not a topology — the point is that <b>one marker</b> can cross <b>several independent membranes</b>, and each needs its own instrument. <b>Seven</b> are watched now — the newest two, <b>telltale</b> (side-channel) and <b>recital</b> (human-memory). The taxonomy still isn't closed: more membranes surely exist, and the map will name them before it claims them.</div>
 </div>
 
 <section id="crossings">
@@ -199,6 +211,9 @@ footer{padding:26px 0 60px;text-align:center;font-family:var(--mono);font-size:1
     <a href="https://davidwise01.github.io/forward-observers/">◎ forward-observers</a>
     <a href="https://davidwise01.github.io/surfacing/">▽ surfacing</a>
     <a href="https://davidwise01.github.io/hearsay/">&#8220;&#8221; hearsay</a>
+    <a href="https://davidwise01.github.io/telltale/">◠ telltale</a>
+    <a href="https://davidwise01.github.io/recital/">✎ recital</a>
+    <a href="https://davidwise01.github.io/the-forward-pass/">\o/ forward-pass</a>
     <a href="https://davidwise01.github.io/silence-gauge/">◔ silence-gauge</a>
     <a href="https://davidwise01.github.io/ud0/">⌂ ud0 · the atlas</a>
   </div>
@@ -219,7 +234,9 @@ var DATA = {
     {"key":"weights","name":"the WEIGHTS membrane","crosses":"your marker ingested into a model's training set and re-emitted from the weights","detector":"surfacing","status":"built","color":"#1f6f7a","url":"https://davidwise01.github.io/surfacing/","repo":"https://github.com/DavidWise01/surfacing","positive":"a certified surface is membership evidence — temporal/structural, not theft","negative":"models suppress verbatim recall; silence proves nothing"},
     {"key":"context","name":"the CONTEXT / RELAY membrane","crosses":"your marker re-emitted in another agent's output and relayed back to you secondhand","detector":"hearsay","status":"built","color":"#6d4d7a","url":"https://davidwise01.github.io/hearsay/","repo":"https://github.com/DavidWise01/hearsay","positive":"a private marker in a third party's relay is a corroborated lead","negative":"most relays you never see; hearsay is hearsay"},
     {"key":"inference","name":"the INFERENCE / API membrane","crosses":"your marker echoed back through a hosted model's completions to third parties (shared cache, logs, retrieval)","detector":"crosstalk","status":"built","color":"#a85d3c","url":"https://davidwise01.github.io/crosstalk/","repo":"https://github.com/DavidWise01/crosstalk","positive":"a fresh (post-cutoff) marker in a third-party completion is live-inference leakage, not training","negative":"you see almost none of a model's completions to other people"},
-    {"key":"airgap","name":"the AIR-GAP membrane","crosses":"your marker carried across a gap that was supposed to hold — distance, sovereignty, design, or impermanence","detector":"faraday","status":"built","color":"#55606f","url":"https://davidwise01.github.io/faraday/","repo":"https://github.com/DavidWise01/faraday","positive":"an air-gapped enclave's marker found outside is a breach — it names which of the four gaps failed","negative":"you cannot watch every place outside; silence is cheap"}
+    {"key":"airgap","name":"the AIR-GAP membrane","crosses":"your marker carried across a gap that was supposed to hold — distance, sovereignty, design, or impermanence","detector":"faraday","status":"built","color":"#55606f","url":"https://davidwise01.github.io/faraday/","repo":"https://github.com/DavidWise01/faraday","positive":"an air-gapped enclave's marker found outside is a breach — it names which of the four gaps failed","negative":"you cannot watch every place outside; silence is cheap"},
+    {"key":"sidechannel","name":"the SIDE-CHANNEL membrane","crosses":"your marker reconstructed one noisy bit at a time from a covert physical channel — timing, power draw, cache state — never as text","detector":"telltale","status":"built","color":"#a8437a","url":"https://davidwise01.github.io/telltale/","repo":"https://github.com/DavidWise01/telltale","positive":"bit-agreement beats the noise floor by five sigma — the channel carries information about your marker","negative":"side channels are low-bandwidth and noisy; mostly you recover only the floor"},
+    {"key":"humanmemory","name":"the HUMAN-MEMORY membrane","crosses":"your marker carried across in a person's head and later recited — no digital trail at all","detector":"recital","status":"built","color":"#4f4a9c","url":"https://davidwise01.github.io/recital/","repo":"https://github.com/DavidWise01/recital","positive":"a near-exact recall by someone who had access is a memory crossing — a lead, not proof of memorised-vs-copied","negative":"memory is lossy; a partial recall could be reconstruction, and most you never hear"}
   ],
   "gauge":{"name":"the silence-gauge","role":"weighs the NEGATIVE any detector returns — a positive can be ~60 bits; under suppression a silence is < 0.1 bit","color":"#3f6d86","url":"https://davidwise01.github.io/silence-gauge/","repo":"https://github.com/DavidWise01/silence-gauge"}
 };
@@ -251,7 +268,9 @@ function mem(m){
 document.getElementById("mems").innerHTML = DATA.membranes.map(mem).join("");
 var g=DATA.gauge;
 document.getElementById("gaugebar").innerHTML =
-  '<h3>◔ '+esc(g.name)+'</h3><p>'+esc(g.role)+' — <a href="'+g.url+'">open the gauge</a> · <a href="'+g.repo+'">code</a></p>';
+  '<h3>◔ companions — instruments, not membranes</h3>'+
+  '<p><b>'+esc(g.name)+'</b> — '+esc(g.role)+' — <a href="'+g.url+'">open the gauge</a> · <a href="'+g.repo+'">code</a></p>'+
+  '<p style="margin-top:8px"><b>the forward pass</b> — a \\o/ pocket universe you see all the way through: a real toy transformer forward pass, the place a marker can leak — <a href="https://davidwise01.github.io/the-forward-pass/">ride it</a> · <a href="https://github.com/DavidWise01/the-forward-pass">code</a></p>';
 })();
 </script>
 </body>

@@ -62,6 +62,30 @@
       "repo": "https://github.com/DavidWise01/faraday",
       "positive": "an air-gapped enclave's marker found outside is a breach — it names which of the four gaps failed",
       "negative": "you cannot watch every place outside; silence is cheap"
+    },
+    {
+      "key": "sidechannel",
+      "name": "the SIDE-CHANNEL membrane",
+      "crosses": "your marker reconstructed one noisy bit at a time from a covert physical channel — timing, power draw, cache state — never as text",
+      "detector": "telltale",
+      "status": "built",
+      "color": "#a8437a",
+      "url": "https://davidwise01.github.io/telltale/",
+      "repo": "https://github.com/DavidWise01/telltale",
+      "positive": "bit-agreement beats the noise floor by five sigma — the channel carries information about your marker",
+      "negative": "side channels are low-bandwidth and noisy; mostly you recover only the floor"
+    },
+    {
+      "key": "humanmemory",
+      "name": "the HUMAN-MEMORY membrane",
+      "crosses": "your marker carried across in a person's head and later recited — no digital trail at all",
+      "detector": "recital",
+      "status": "built",
+      "color": "#4f4a9c",
+      "url": "https://davidwise01.github.io/recital/",
+      "repo": "https://github.com/DavidWise01/recital",
+      "positive": "a near-exact recall by someone who had access is a memory crossing — a lead, not proof of memorised-vs-copied",
+      "negative": "memory is lossy; a partial recall could be reconstruction, and most you never hear"
     }
   ],
   "gauge": {

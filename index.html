@@ -62,6 +62,15 @@ h2.sec{font-size:clamp(22px,3.8vw,30px);margin:.14em 0 .18em}
 .mem .st.built{background:color-mix(in srgb,var(--mc) 16%,#fff);color:var(--mc)}
 .mem .st.unbuilt{background:#eae3d2;color:var(--dim)}
 .mem .st.partial{background:color-mix(in srgb,var(--mc) 12%,#fff);color:var(--dim)}
+.mem .st.developing{background:#efe8d6;color:var(--dim);animation:devpulse 2.2s ease-in-out infinite}
+@keyframes devpulse{0%,100%{opacity:1}50%{opacity:.5}}
+.polaroid{display:inline-block;background:#fff;border:1px solid var(--line);border-radius:3px;padding:7px 7px 20px;box-shadow:0 5px 14px -7px #0005;transform:rotate(-1.6deg);position:relative;margin-top:10px}
+.polaroid .photo{width:158px;height:100px;border-radius:2px;display:flex;align-items:center;justify-content:center;background:repeating-linear-gradient(45deg,#e7e0cf,#e7e0cf 9px,#e1d9c5 9px,#e1d9c5 18px)}
+.polaroid .photo .dev{font-family:var(--mono);font-size:10px;letter-spacing:.16em;text-transform:uppercase;color:#a89e82;animation:devpulse 2.2s ease-in-out infinite}
+.polaroid .cap{position:absolute;bottom:3px;left:0;right:0;text-align:center;font-family:var(--serif);font-size:11px;font-style:italic;color:var(--dim)}
+.polaroid.done .photo{background:var(--mc);flex-direction:column;gap:2px}
+.polaroid.done .photo .dn{font-family:var(--mono);font-size:12px;font-weight:700;color:#fff}
+.polaroid.done .photo .ds{font-family:var(--mono);font-size:8.5px;letter-spacing:.12em;text-transform:uppercase;color:#fffc}
 .mem .cr{font-size:14px;color:var(--ink2);margin:7px 0 6px}
 .mem .pn{display:grid;grid-template-columns:1fr 1fr;gap:8px 16px;font-size:13px;color:var(--ink2)}
 .mem .pn .p b{color:var(--olive2,var(--mc))} .mem .pn .n b{color:var(--signal2)}
@@ -136,16 +145,22 @@ footer{padding:26px 0 60px;text-align:center;font-family:var(--mono);font-size:1
       <text x="206" y="170" text-anchor="middle" font-size="9.5" fill="#514a37">published membrane</text>
     </g>
 
-    <!-- unbuilt nodes -->
+    <!-- developing nodes: empty polaroids pinned to the map -->
     <g font-family="ui-monospace,monospace">
-      <circle cx="499" cy="368" r="11" fill="none" stroke="#b9ab86" stroke-width="1.6" stroke-dasharray="3 3"/>
-      <text x="499" y="368" text-anchor="middle" font-size="12" fill="#b9ab86" dy="4">?</text>
+      <g transform="translate(499,366) rotate(4)">
+        <rect x="-13" y="-14" width="26" height="31" rx="1.5" fill="#fff" stroke="#c9bd9c" stroke-width="1.2"/>
+        <rect x="-10" y="-11" width="20" height="16" fill="#e3dcc9"/>
+        <text x="0" y="13" text-anchor="middle" font-size="4.5" fill="#a89e82">undeveloped</text>
+      </g>
       <text x="520" y="398" text-anchor="middle" font-size="9.5" fill="#847c64">inference / API</text>
-      <text x="520" y="410" text-anchor="middle" font-size="8.5" fill="#a89e82">un-watched</text>
-      <circle cx="261" cy="368" r="11" fill="none" stroke="#b9ab86" stroke-width="1.6" stroke-dasharray="3 3"/>
-      <text x="261" y="368" text-anchor="middle" font-size="12" fill="#b9ab86" dy="4">?</text>
+      <text x="520" y="410" text-anchor="middle" font-size="8.5" fill="#a89e82">developing…</text>
+      <g transform="translate(261,366) rotate(-4)">
+        <rect x="-13" y="-14" width="26" height="31" rx="1.5" fill="#fff" stroke="#c9bd9c" stroke-width="1.2"/>
+        <rect x="-10" y="-11" width="20" height="16" fill="#e3dcc9"/>
+        <text x="0" y="13" text-anchor="middle" font-size="4.5" fill="#a89e82">undeveloped</text>
+      </g>
       <text x="240" y="398" text-anchor="middle" font-size="9.5" fill="#847c64">air-gap</text>
-      <text x="240" y="410" text-anchor="middle" font-size="8.5" fill="#a89e82">partial (ladder)</text>
+      <text x="240" y="410" text-anchor="middle" font-size="8.5" fill="#a89e82">developing…</text>
     </g>
 
     <!-- the silence gauge, weighing the return -->
@@ -157,7 +172,7 @@ footer{padding:26px 0 60px;text-align:center;font-family:var(--mono);font-size:1
       <text x="0" y="38" text-anchor="middle" font-family="ui-monospace,monospace" font-size="8" fill="#847c64">weighs a negative</text>
     </g>
   </svg>
-  <div class="mapnote">The rings are a metaphor, not a topology — the point is that <b>one marker</b> can cross <b>several independent membranes</b>, and each needs its own instrument. Solid spokes are built; dashed are named-but-unbuilt.</div>
+  <div class="mapnote">The rings are a metaphor, not a topology — the point is that <b>one marker</b> can cross <b>several independent membranes</b>, and each needs its own instrument. Solid spokes are built; dashed spokes carry an <b>empty polaroid</b> — a detector being built, waiting to develop.</div>
 </div>
 
 <section id="crossings">
@@ -201,14 +216,26 @@ var DATA = {
     {"key":"published","name":"the PUBLISHED membrane","crosses":"your marker on a crawlable page, found where an index already crawled it","detector":"forward-observers","status":"built","color":"#6f7d3f","url":"https://davidwise01.github.io/forward-observers/","repo":"https://github.com/DavidWise01/forward-observers","positive":"a hit is ground truth: the token is indexed at that URL","negative":"absence in the ledger is not absence in the world"},
     {"key":"weights","name":"the WEIGHTS membrane","crosses":"your marker ingested into a model's training set and re-emitted from the weights","detector":"surfacing","status":"built","color":"#1f6f7a","url":"https://davidwise01.github.io/surfacing/","repo":"https://github.com/DavidWise01/surfacing","positive":"a certified surface is membership evidence — temporal/structural, not theft","negative":"models suppress verbatim recall; silence proves nothing"},
     {"key":"context","name":"the CONTEXT / RELAY membrane","crosses":"your marker re-emitted in another agent's output and relayed back to you secondhand","detector":"hearsay","status":"built","color":"#6d4d7a","url":"https://davidwise01.github.io/hearsay/","repo":"https://github.com/DavidWise01/hearsay","positive":"a private marker in a third party's relay is a corroborated lead","negative":"most relays you never see; hearsay is hearsay"},
-    {"key":"inference","name":"the INFERENCE / API membrane","crosses":"your marker echoed back through a hosted model's completions to third parties (shared cache, logs, retrieval)","detector":null,"status":"unbuilt","color":"#9a8f6d","positive":null,"negative":null},
-    {"key":"airgap","name":"the AIR-GAP membrane","crosses":"your marker carried across a gap that was supposed to hold — distance, sovereignty, design, or impermanence","detector":"airgap-ladder (adjacent thread)","status":"partial","color":"#8a7a86","positive":null,"negative":null}
+    {"key":"inference","name":"the INFERENCE / API membrane","crosses":"your marker echoed back through a hosted model's completions to third parties (shared cache, logs, retrieval)","detector":null,"status":"developing","color":"#9a8f6d","positive":null,"negative":null},
+    {"key":"airgap","name":"the AIR-GAP membrane","crosses":"your marker carried across a gap that was supposed to hold — distance, sovereignty, design, or impermanence","detector":null,"status":"developing","color":"#8a7a86","positive":null,"negative":null}
   ],
   "gauge":{"name":"the silence-gauge","role":"weighs the NEGATIVE any detector returns — a positive can be ~60 bits; under suppression a silence is < 0.1 bit","color":"#3f6d86","url":"https://davidwise01.github.io/silence-gauge/","repo":"https://github.com/DavidWise01/silence-gauge"}
 };
 function esc(s){return String(s==null?"":s).replace(/[&<>]/g,function(c){return {"&":"&amp;","<":"&lt;",">":"&gt;"}[c];});}
 function mem(m){
-  var st=m.status, stc=st==="built"?"built":(st==="partial"?"partial":"unbuilt");
+  var st=m.status;
+  if(st==="developing"){
+    var pol = m.detector
+      ? '<div class="polaroid done"><div class="photo"><span class="dn">'+esc(m.detector)+'</span><span class="ds">developed</span></div><div class="cap">'+esc(m.key)+' membrane · developed</div></div>'
+      : '<div class="polaroid"><div class="photo"><span class="dev">exposing…</span></div><div class="cap">'+esc(m.key)+' membrane · undeveloped</div></div>';
+    return '<div class="mem" style="--mc:'+m.color+'"><div class="mh"><span class="nm">'+esc(m.name)+'</span>'+
+      '<span class="det" style="color:var(--dim)">developing…</span><span class="st developing">developing</span></div>'+
+      '<div class="cr">'+esc(m.crosses)+'</div>'+
+      '<div class="pn"><div class="n" style="grid-column:1/-1"><div class="lab">in the darkroom</div>'+
+      'an empty polaroid is pinned here — the detector for this membrane is being built. it develops when done.</div></div>'+
+      pol+'</div>';
+  }
+  var stc=st==="built"?"built":(st==="partial"?"partial":"unbuilt");
   var det=m.detector?('<span class="det">'+esc(m.detector)+'</span>'):'<span class="det" style="color:var(--dim)">no detector yet</span>';
   var pn = st==="built"
     ? '<div class="pn"><div class="p"><div class="lab">a positive</div>'+esc(m.positive)+'</div><div class="n"><div class="lab">a negative</div>'+esc(m.negative)+'</div></div>'

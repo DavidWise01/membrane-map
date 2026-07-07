@@ -44,7 +44,7 @@
       "name": "the INFERENCE / API membrane",
       "crosses": "your marker echoed back through a hosted model's completions to third parties (shared cache, logs, retrieval)",
       "detector": null,
-      "status": "unbuilt",
+      "status": "developing",
       "color": "#9a8f6d",
       "positive": null,
       "negative": null
@@ -53,8 +53,8 @@
       "key": "airgap",
       "name": "the AIR-GAP membrane",
       "crosses": "your marker carried across a gap that was supposed to hold — distance, sovereignty, design, or impermanence",
-      "detector": "airgap-ladder (adjacent thread)",
-      "status": "partial",
+      "detector": null,
+      "status": "developing",
       "color": "#8a7a86",
       "positive": null,
       "negative": null

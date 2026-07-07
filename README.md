@@ -11,7 +11,7 @@ not yet watch.
 | WEIGHTS | ingested into a training set, re-emitted from the weights | [surfacing](https://davidwise01.github.io/surfacing/) | built |
 | CONTEXT / RELAY | re-emitted in another agent's output, relayed to you secondhand | [hearsay](https://davidwise01.github.io/hearsay/) | built |
 | INFERENCE / API | echoed through a hosted model's completions to third parties | — | **unbuilt** |
-| AIR-GAP | carried across a gap that was supposed to hold | airgap-ladder (adjacent) | partial |
+| AIR-GAP | carried across a gap that was supposed to hold | airgap-ladder (adjacent thread) | partial |
 
 And [the silence-gauge](https://davidwise01.github.io/silence-gauge/) weighs the
 **negative** any detector returns — a positive can be ~60 bits; under suppression

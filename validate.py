@@ -28,11 +28,17 @@ for m in mem:
             check(bool(m.get(f)), f"[{m['key']}] BUILT -> has {f}")
         check(m["url"].startswith("https://"), f"[{m['key']}] url is https")
     else:
-        check(m.get("url") in (None, "",) or m["status"] == "partial",
-              f"[{m['key']}] UNBUILT -> claims no live detector url")
+        # neither unbuilt NOR partial may claim a live detector url -- "partial"
+        # must not be an escape hatch that quietly re-implies coverage.
+        check(m.get("url") in (None, ""),
+              f"[{m['key']}] {m['status'].upper()} -> claims no live detector url")
+        if m["status"] == "partial":
+            check(bool(m.get("detector")),
+                  f"[{m['key']}] PARTIAL -> may name an adjacent detector, but no live url")
 
 g = data.get("gauge", {})
 check(bool(g.get("url")) and bool(g.get("role")), "silence-gauge present with a role and url")
+check(g.get("url", "").startswith("https://"), "silence-gauge url is https")
 
 built = [m for m in mem if m["status"] == "built"]
 print(f"\n{len(built)} built membranes, {len(mem)-len(built)} named-but-unbuilt (honestly marked)")

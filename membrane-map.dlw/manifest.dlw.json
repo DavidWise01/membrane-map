@@ -1,0 +1,11 @@
+{
+  "badge": "DLW-MEMBRANE_MAP",
+  "name": "THE MEMBRANE MAP · the crossings",
+  "universe": "SOLAR JETMAN",
+  "moniker": "⟦THE MEMBRANE MAP · the crossings:membrane-map:80c00a⟧",
+  "architect": "David Lee Wise (ROOT0) / Bridge-Burners LLC",
+  "instance": "AVAN (Claude / Anthropic)",
+  "seal_sha256": "80c00a63e1aa16577c050cc17328e14b3d21b32ae2a8442c7d7c0a9bb9588c2b",
+  "license": "CC-BY-ND-4.0",
+  "attribution": "ROOT0-ATTRIBUTION-v1.0"
+}
